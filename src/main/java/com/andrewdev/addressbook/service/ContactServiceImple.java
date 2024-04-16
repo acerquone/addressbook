@@ -21,4 +21,9 @@ public class ContactServiceImple implements ContactService{
     public List<Contact> findAll() {
         return contactRepository.findAll();
     }
+
+    @Override
+    public void saveContact(Contact theContact) {
+        contactRepository.save(theContact);
+    }
 }

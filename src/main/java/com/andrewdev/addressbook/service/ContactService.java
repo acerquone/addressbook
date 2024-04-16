@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface ContactService {
 
-    List<Contact> findAll();
+    public List<Contact> findAll();
+
+    public void saveContact(Contact theContact);
 }
