@@ -1,6 +1,9 @@
 package com.andrewdev.addressbook.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "Contact")
@@ -12,12 +15,16 @@ public class Contact {
     private Integer id;
 
     @Column(name = "first_name")
+    @NotBlank(message = "First name is required")
+    @Size(min = 2,max = 32, message = "First name must be between 2 and 32 characters long")
     private String firstName;
 
     @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "phone_number")
+    @NotBlank(message = "Phone number required")
+    @Size(min = 7,max = 15, message = "Phone number must be between 7 and 15 characters long")
     private String phoneNumber;
 
     @Column(name = "email")
