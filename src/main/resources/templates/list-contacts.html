@@ -22,6 +22,7 @@
                     <th>Last Name</th>
                     <th>Phone Number</th>
                     <th>Email</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,11 @@
                     <td th:text="${contact.lastName}"></td>
                     <td th:text="${contact.phoneNumber}"></td>
                     <td th:text="${contact.email}"></td>
+                    <td>
+                        <a th:href="@{showUpdateForm(contactID=${contact.id})}" class="btn btn-info btn-sm">
+                            Update
+                        </a>
+                    </td>
                 </tr>
 
             </tbody>
