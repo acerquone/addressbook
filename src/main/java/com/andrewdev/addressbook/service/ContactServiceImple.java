@@ -41,4 +41,9 @@ public class ContactServiceImple implements ContactService{
     public void saveContact(Contact theContact) {
         contactRepository.save(theContact);
     }
+
+    @Override
+    public void deleteContact(Integer id) {
+        contactRepository.deleteById(id);
+    }
 }

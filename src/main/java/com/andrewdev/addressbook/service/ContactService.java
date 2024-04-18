@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface ContactService {
 
-    public List<Contact> findAll();
+    List<Contact> findAll();
 
-    public Contact findByID(Integer id);
+    Contact findByID(Integer id);
 
-    public void saveContact(Contact theContact);
+    void saveContact(Contact theContact);
+
+    void deleteContact(Integer id);
 }
