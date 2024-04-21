@@ -12,9 +12,12 @@
 
         <h3>Address Book</h3>
         <hr>
-        <a th:href="@{showAddForm}" class="btn btn-success btn-sm mb-3">
+        <a th:href="@{showAddForm}" class="btn btn-primary btn-sm mb-3">
             Add new contact
         </a>
+        <form action="#" th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout" class="btn btn-secondary btn-sm mb-3">
+        </form>
         <table class="table table-bordered table-stripped">
             <thead class="table-info">
                 <tr>
@@ -33,7 +36,7 @@
                     <td th:text="${contact.phoneNumber}"></td>
                     <td th:text="${contact.email}"></td>
                     <td>
-                        <a th:href="@{showUpdateForm(contactID=${contact.id})}" class="btn btn-info btn-sm">
+                        <a th:href="@{showUpdateForm(contactID=${contact.id})}" class="btn btn-warning btn-sm">
                             Update
                         </a>
                         <a th:href="@{delete(contactID=${contact.id})}" class="btn btn-danger btn-sm"

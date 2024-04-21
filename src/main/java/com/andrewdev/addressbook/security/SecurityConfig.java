@@ -14,7 +14,8 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests(configurer -> configurer.anyRequest().authenticated())
                 .formLogin(form -> form.loginPage("/showLoginPage")
                         .loginProcessingUrl("/authenticateUser")
-                        .permitAll());
+                        .permitAll())
+                .logout(logout -> logout.permitAll());
 
         return httpSecurity.build();
     }
